@@ -10,6 +10,7 @@ import { connectDB } from "./database/db";
 
 dotenv.config();
 const app = express();
+const PORT = process.env.PORT || 6001;
 
 app.use(
   session({
@@ -32,7 +33,7 @@ app.use("/jobs", jobRouter);
 app.use("/favourites", favouriteRouter);
 app.use("/user", userRouter);
 
-app.listen("6001", () => {
+app.listen(PORT, () => {
   console.log("server listening");
 });
 
